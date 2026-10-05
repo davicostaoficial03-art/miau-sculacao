@@ -1,48 +1,78 @@
+```html
 <!DOCTYPE html>
+<!-- Define que o documento utiliza o padrão HTML5 -->
+
 <html lang="pt-BR">
+<!-- Inicia o documento HTML e define o português do Brasil como idioma -->
 
 <head>
+    <!-- Área destinada às configurações e informações da página -->
+
     <meta charset="UTF-8">
+    <!-- Permite utilizar caracteres especiais e acentos corretamente -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Faz a página se adaptar a diferentes tamanhos de tela -->
 
     <title>Contato - Clínica Veterinária</title>
+    <!-- Define o título exibido na aba do navegador -->
 
     <!-- Bootstrap -->
+    <!-- Importa o Bootstrap 5.3.3 para utilizar classes prontas
+         de layout, responsividade e componentes -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet">
 
     <!-- CSS próprio -->
+    <!-- Importa o arquivo CSS criado para personalizar
+         a aparência do projeto -->
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
+    <!-- Corpo da página: contém todo o conteúdo exibido ao usuário -->
 
     <!-- Barra de navegação -->
+    <!-- Estrutura criada para permitir a navegação entre as páginas -->
     <nav class="navbar navbar-expand-lg">
+
+        <!-- Container criado para organizar e centralizar
+             os elementos da barra de navegação -->
         <div class="container">
 
+            <!-- Nome da clínica criado como link para retornar à página inicial -->
             <a class="navbar-brand" href="index.html">
                 Clínica Veterinária
             </a>
 
+            <!-- Botão criado para abrir o menu em telas menores -->
             <button class="navbar-toggler" type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#menu">
+
+                <!-- Ícone criado para representar o botão do menu -->
                 <span class="navbar-toggler-icon"></span>
+
             </button>
 
+            <!-- Área criada para armazenar os links da navegação -->
             <div class="collapse navbar-collapse" id="menu">
 
+                <!-- Lista criada para organizar os links do menu -->
                 <ul class="navbar-nav ms-auto">
 
+                    <!-- Link criado para acessar a página inicial -->
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Início</a>
                     </li>
 
+                    <!-- Link criado para acessar a página de serviços -->
                     <li class="nav-item">
                         <a class="nav-link" href="servicos.html">Serviços</a>
                     </li>
 
+                    <!-- Link criado para acessar a página de contato -->
                     <li class="nav-item">
                         <a class="nav-link" href="contato.html">Contato</a>
                     </li>
@@ -54,13 +84,20 @@
         </div>
     </nav>
 
+    <!-- Conteúdo principal da página -->
     <main>
 
         <!-- Introdução -->
+        <!-- Seção criada para apresentar a finalidade
+             da página de contato e agendamento -->
         <section class="container text-center my-5">
 
+            <!-- Título principal criado para apresentar
+                 a função da página -->
             <h1>Agende um atendimento</h1>
 
+            <!-- Texto criado para orientar o usuário
+                 sobre o preenchimento do formulário -->
             <p>
                 Preencha o formulário abaixo para solicitar
                 um atendimento para seu animal.
@@ -69,21 +106,33 @@
         </section>
 
         <!-- Formulário -->
+        <!-- Seção criada para organizar o formulário
+             de solicitação de atendimento -->
         <section class="container my-5">
 
+            <!-- Form criado para reunir todos os dados
+                 necessários para a solicitação -->
             <form>
 
                 <!-- Dados do responsável -->
+                <!-- Primeira parte do formulário, criada para
+                     coletar informações da pessoa responsável pelo animal -->
                 <div class="row">
 
+                    <!-- Coluna criada para o campo do nome.
+                         Ocupa toda a largura em telas pequenas
+                         e metade em telas médias ou maiores -->
                     <div class="col-12 col-md-6">
 
                         <div class="mb-3">
 
+                            <!-- Label criado para identificar
+                                 o campo de nome do responsável -->
                             <label for="nome" class="form-label">
                                 Nome do responsável
                             </label>
 
+                            <!-- Campo criado para receber o nome do responsável -->
                             <input
                                 type="text"
                                 class="form-control"
@@ -95,14 +144,20 @@
 
                     </div>
 
+                    <!-- Coluna criada para o campo de e-mail -->
                     <div class="col-12 col-md-6">
 
                         <div class="mb-3">
 
+                            <!-- Label criado para identificar
+                                 o campo de e-mail -->
                             <label for="email" class="form-label">
                                 E-mail
                             </label>
 
+                            <!-- Campo criado para receber o e-mail.
+                                 O type="email" permite ao navegador
+                                 identificar que deve ser informado um e-mail -->
                             <input
                                 type="email"
                                 class="form-control"
@@ -117,16 +172,22 @@
                 </div>
 
                 <!-- Dados do animal -->
+                <!-- Segunda parte criada para coletar
+                     informações básicas do animal -->
                 <div class="row">
 
+                    <!-- Coluna criada para o nome do animal -->
                     <div class="col-12 col-md-6">
 
                         <div class="mb-3">
 
+                            <!-- Label criado para identificar
+                                 o campo do nome do animal -->
                             <label for="animal" class="form-label">
                                 Nome do animal
                             </label>
 
+                            <!-- Campo criado para receber o nome do animal -->
                             <input
                                 type="text"
                                 class="form-control"
@@ -138,32 +199,42 @@
 
                     </div>
 
+                    <!-- Coluna criada para selecionar a espécie do animal -->
                     <div class="col-12 col-md-6">
 
                         <div class="mb-3">
 
+                            <!-- Label criado para identificar
+                                 o campo de espécie -->
                             <label for="especie" class="form-label">
                                 Espécie
                             </label>
 
+                            <!-- Select criado para permitir
+                                 que o usuário escolha a espécie -->
                             <select
                                 class="form-select"
                                 id="especie"
                                 name="especie_animal"
                                 required>
 
+                                <!-- Opção inicial criada para orientar
+                                     o usuário a realizar uma seleção -->
                                 <option value="">
                                     Selecione
                                 </option>
 
+                                <!-- Opção criada para selecionar cachorro -->
                                 <option value="cachorro">
                                     Cachorro
                                 </option>
 
+                                <!-- Opção criada para selecionar gato -->
                                 <option value="gato">
                                     Gato
                                 </option>
 
+                                <!-- Opção criada para permitir outras espécies -->
                                 <option value="outro">
                                     Outro
                                 </option>
@@ -177,42 +248,56 @@
                 </div>
 
                 <!-- Tipo de atendimento -->
+                <!-- Campo criado para permitir que o usuário
+                     escolha qual serviço deseja solicitar -->
                 <div class="mb-3">
 
+                    <!-- Label criado para identificar
+                         o campo de serviço -->
                     <label for="servico" class="form-label">
                         Serviço desejado
                     </label>
 
+                    <!-- Select criado para organizar
+                         os serviços disponíveis para escolha -->
                     <select
                         class="form-select"
                         id="servico"
                         name="servico"
                         required>
 
+                        <!-- Opção inicial criada para orientar
+                             o usuário a selecionar um serviço -->
                         <option value="">
                             Selecione um serviço
                         </option>
 
+                        <!-- Opção criada para consulta veterinária -->
                         <option value="consulta">
                             Consulta veterinária
                         </option>
 
+                        <!-- Opção criada para vacinação -->
                         <option value="vacinacao">
                             Vacinação
                         </option>
 
+                        <!-- Opção criada para banho e higiene -->
                         <option value="banho">
                             Banho e higiene
                         </option>
 
+                        <!-- Opção criada para avaliação preventiva -->
                         <option value="avaliacao">
                             Avaliação preventiva
                         </option>
 
+                        <!-- Opção criada para orientação -->
                         <option value="orientacao">
                             Orientação
                         </option>
 
+                        <!-- Opção criada para acompanhamento -->
                         <option value="acompanhamento">
                             Acompanhamento
                         </option>
@@ -222,14 +307,21 @@
                 </div>
 
                 <!-- Sexo do animal -->
+                <!-- Fieldset criado para agrupar
+                     as opções relacionadas ao sexo do animal -->
                 <fieldset class="mb-3">
 
+                    <!-- Legend criada para identificar
+                         o conjunto de opções -->
                     <legend>
                         Sexo do animal
                     </legend>
 
+                    <!-- Primeiro campo de seleção -->
                     <div class="form-check">
 
+                        <!-- Radio criado para permitir a seleção
+                             da opção "Macho" -->
                         <input
                             class="form-check-input"
                             type="radio"
@@ -237,14 +329,19 @@
                             id="macho"
                             value="macho">
 
+                        <!-- Label criada para identificar
+                             a opção de macho -->
                         <label class="form-check-label" for="macho">
                             Macho
                         </label>
 
                     </div>
 
+                    <!-- Segundo campo de seleção -->
                     <div class="form-check">
 
+                        <!-- Radio criado para permitir a seleção
+                             da opção "Fêmea" -->
                         <input
                             class="form-check-input"
                             type="radio"
@@ -252,6 +349,8 @@
                             id="femea"
                             value="femea">
 
+                        <!-- Label criada para identificar
+                             a opção de fêmea -->
                         <label class="form-check-label" for="femea">
                             Fêmea
                         </label>
@@ -261,14 +360,20 @@
                 </fieldset>
 
                 <!-- Serviços adicionais -->
+                <!-- Fieldset criado para agrupar opções
+                     de serviços ou informações adicionais -->
                 <fieldset class="mb-3">
 
+                    <!-- Legend criada para identificar
+                         o grupo de opções adicionais -->
                     <legend>
                         Serviços adicionais
                     </legend>
 
                     <div class="form-check">
 
+                        <!-- Checkbox criado para permitir que o usuário
+                             solicite informações sobre retorno -->
                         <input
                             class="form-check-input"
                             type="checkbox"
@@ -276,6 +381,8 @@
                             id="retorno"
                             value="retorno">
 
+                        <!-- Label criada para explicar
+                             a função do checkbox -->
                         <label class="form-check-label" for="retorno">
                             Gostaria de receber informações sobre retorno
                         </label>
@@ -285,12 +392,18 @@
                 </fieldset>
 
                 <!-- Observações -->
+                <!-- Área criada para permitir que o usuário
+                     informe detalhes adicionais sobre o animal -->
                 <div class="mb-3">
 
+                    <!-- Label criada para identificar
+                         o campo de observações -->
                     <label for="mensagem" class="form-label">
                         Observações
                     </label>
 
+                    <!-- Textarea criado para permitir
+                         a inserção de textos maiores -->
                     <textarea
                         class="form-control"
                         id="mensagem"
@@ -302,6 +415,8 @@
                 </div>
 
                 <!-- Botão -->
+                <!-- Botão criado para enviar as informações preenchidas
+                     no formulário -->
                 <button type="submit" class="btn btn-primary">
                     Enviar solicitação
                 </button>
@@ -313,14 +428,21 @@
     </main>
 
     <!-- Rodapé -->
+    <!-- Área criada para apresentar a identificação do projeto -->
     <footer class="text-center py-4">
 
+        <!-- Texto criado para identificar a clínica
+             e o projeto desenvolvido -->
         <p class="mb-0">
             Clínica Veterinária - Projeto TDS I
         </p>
 
     </footer>
 
+    <!-- JavaScript do Bootstrap -->
+    <!-- Importa o JavaScript do Bootstrap para permitir
+         o funcionamento dos componentes interativos,
+         como o menu de navegação em telas menores -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
     </script>
 
