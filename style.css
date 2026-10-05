@@ -1,0 +1,352 @@
+/* =====================================================
+   PALETA DE CORES
+   ===================================================== */
+:root {
+  --bege: #E8CCAD;
+  --laranja: #EC802B;
+  --laranja-escuro: #D96520;
+  --amarelo: #EDC55B;
+  --turquesa: #66BCB4;
+  --turquesa-escuro: #3F9690;
+  --marrom: #795027;
+  --creme: #FFF8EF;
+  --branco: #FFFFFF;
+  --cinza: #6d6258;
+}
+
+
+/* =====================================================
+   CONFIGURAÇÕES GERAIS
+   ===================================================== */
+
+body {
+  background-color: var(--creme);
+  color: var(--marrom);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+
+/* =====================================================
+   NAVBAR
+   ===================================================== */
+
+.navbar {
+  background-color: var(--turquesa) !important;
+  box-shadow: 0 3px 10px rgba(63, 150, 144, 0.25);
+}
+
+.navbar-brand {
+  color: var(--branco) !important;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.nav-link {
+  color: var(--branco) !important;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--amarelo) !important;
+}
+
+
+/* =====================================================
+   BOTÃO DO MENU MOBILE
+   ===================================================== */
+
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.navbar-toggler-icon {
+  filter: brightness(0) invert(1);
+}
+
+
+/* =====================================================
+   ÁREA DE APRESENTAÇÃO
+   ===================================================== */
+
+main > section.container.text-center.my-5 {
+  background-color: var(--bege);
+  border-radius: 20px;
+  padding: 45px 25px;
+  box-shadow: 0 5px 15px rgba(121, 80, 39, 0.12);
+}
+
+main > section.container.text-center.my-5 h1 {
+  color: var(--marrom);
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+main > section.container.text-center.my-5 p {
+  color: var(--marrom) !important;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+
+/* =====================================================
+   CARDS
+   ===================================================== */
+
+.card {
+  height: 100%;
+  border: none;
+  border-radius: 18px;
+  overflow: hidden;
+  background-color: var(--branco);
+  box-shadow: 0 5px 15px rgba(121, 80, 39, 0.12);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 10px 25px rgba(121, 80, 39, 0.20);
+}
+
+.card-body {
+  height: 100%;
+  padding: 25px;
+  border-top: 7px solid var(--turquesa);
+}
+
+.card-title {
+  color: var(--marrom);
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.card-text {
+  color: var(--cinza);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+
+/* =====================================================
+   BOTÕES
+   ===================================================== */
+
+.btn-primary {
+  background-color: var(--laranja-escuro);
+  border-color: var(--laranja-escuro);
+  color: var(--branco);
+
+  font-weight: 700;
+  border-radius: 25px;
+  padding: 9px 22px;
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--laranja);
+  border-color: var(--laranja);
+  color: var(--branco);
+  transform: scale(1.04);
+}
+
+.btn-primary:active {
+  background-color: var(--laranja-escuro) !important;
+  border-color: var(--laranja-escuro) !important;
+}
+
+
+/* =====================================================
+   SEÇÃO DE HORÁRIOS
+   ===================================================== */
+
+#horarios h2 {
+  color: var(--marrom);
+  font-weight: 800;
+}
+
+
+/* =====================================================
+   TABELA
+   ===================================================== */
+
+.table {
+  background-color: var(--branco);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(121, 80, 39, 0.10);
+  margin-bottom: 0;
+}
+
+.table thead {
+  background-color: var(--turquesa);
+  color: var(--branco);
+}
+
+.table thead th {
+  border: none;
+  padding: 15px;
+  background-color: var(--turquesa);
+  color: var(--branco);
+}
+
+.table tbody td {
+  color: var(--marrom);
+  padding: 13px;
+  vertical-align: middle;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  background-color: var(--creme);
+}
+
+.table-striped > tbody > tr:nth-of-type(even) > * {
+  background-color: var(--branco);
+}
+
+.table tbody tr:hover td {
+  background-color: var(--bege);
+}
+
+
+/* =====================================================
+   FORMULÁRIO DE CONTATO
+   ===================================================== */
+
+form {
+  background-color: var(--branco);
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(121, 80, 39, 0.12);
+}
+
+.form-label {
+  color: var(--marrom);
+  font-weight: 600;
+}
+
+.form-control,
+.form-select {
+  border: 1px solid #d8c8b8;
+  border-radius: 10px;
+  padding: 10px 12px;
+  color: var(--marrom);
+}
+
+.form-control::placeholder {
+  color: #9b9086;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--turquesa);
+  box-shadow: 0 0 0 0.2rem rgba(102, 188, 180, 0.20);
+}
+
+.form-check-input {
+  border-color: #cbb9a7;
+}
+
+.form-check-input:checked {
+  background-color: var(--turquesa);
+  border-color: var(--turquesa);
+}
+
+.form-check-label {
+  color: var(--marrom);
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+}
+
+fieldset legend {
+  color: var(--marrom);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+
+/* =====================================================
+   RODAPÉ
+   ===================================================== */
+
+footer {
+  background-color: var(--turquesa) !important;
+  color: var(--branco);
+  margin-top: 40px;
+}
+
+footer p {
+  font-weight: 600;
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+  .navbar-brand {
+    font-size: 1.05rem;
+  }
+
+  main > section.container.text-center.my-5 {
+    padding: 30px 18px;
+  }
+
+  main > section.container.text-center.my-5 h1 {
+    font-size: 1.8rem;
+  }
+
+  .card-body {
+    padding: 20px;
+  }
+
+  .btn-primary {
+    width: 100%;
+  }
+
+  form {
+    padding: 20px;
+  }
+
+  .table {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* =====================================================
+   TELAS MUITO PEQUENAS
+   ===================================================== */
+
+@media (max-width: 400px) {
+
+  main > section.container.text-center.my-5 h1 {
+    font-size: 1.5rem;
+  }
+
+  main > section.container.text-center.my-5 p {
+    font-size: 0.95rem;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  form {
+    padding: 15px;
+  }
+}
