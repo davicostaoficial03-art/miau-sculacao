@@ -1,47 +1,78 @@
+```html
 <!DOCTYPE html>
+<!-- Define que o documento utiliza a versão HTML5 -->
+
 <html lang="pt-BR">
+<!-- Inicia o documento HTML e define o português do Brasil como idioma -->
 
 <head>
+    <!-- Contém as configurações e informações da página -->
+
     <meta charset="UTF-8">
+    <!-- Permite utilizar caracteres especiais e acentuação corretamente -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Faz a página se adaptar a diferentes tamanhos de tela,
+         melhorando a visualização em celulares e tablets -->
 
     <title>Clínica Veterinária</title>
+    <!-- Define o título que aparece na aba do navegador -->
 
     <!-- Bootstrap -->
+    <!-- Importa o Bootstrap 5.3.3 para utilizar recursos de
+         responsividade, layout e componentes prontos -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet">
 
     <!-- CSS próprio do projeto -->
+    <!-- Importa o arquivo style.css, criado para personalizar
+         a aparência e o estilo da página -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- Corpo da página: contém todo o conteúdo exibido ao usuário -->
 
     <!-- Barra de navegação -->
+    <!-- Estrutura criada para permitir a navegação entre as páginas do projeto -->
     <nav class="navbar navbar-expand-lg">
+
+        <!-- Container criado para organizar e centralizar
+             o conteúdo da barra de navegação -->
         <div class="container">
 
+            <!-- Nome da clínica criado como link para retornar à página inicial -->
             <a class="navbar-brand" href="index.html">
                 Clínica Veterinária
             </a>
 
+            <!-- Botão criado para abrir e fechar o menu
+                 quando a tela possui tamanho reduzido -->
             <button class="navbar-toggler" type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#menu">
+
+                <!-- Ícone utilizado dentro do botão do menu -->
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+            <!-- Área criada para armazenar os links da navegação -->
             <div class="collapse navbar-collapse" id="menu">
+
+                <!-- Lista criada para organizar os links do menu -->
                 <ul class="navbar-nav ms-auto">
 
+                    <!-- Link criado para acessar a página inicial -->
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Início</a>
                     </li>
 
+                    <!-- Link criado para acessar a página de serviços -->
                     <li class="nav-item">
                         <a class="nav-link" href="servicos.html">Serviços</a>
                     </li>
 
+                    <!-- Link criado para acessar a página de contato -->
                     <li class="nav-item">
                         <a class="nav-link" href="contato.html">Contato</a>
                     </li>
@@ -52,18 +83,26 @@
         </div>
     </nav>
 
-    <!-- Apresentação -->
+    <!-- Conteúdo principal da página -->
     <main>
 
+        <!-- Apresentação -->
+        <!-- Seção criada para apresentar a clínica e explicar
+             brevemente sua proposta ao visitante -->
         <section class="container text-center my-5">
 
+            <!-- Título principal criado para apresentar a clínica -->
             <h1>Bem-vindo à nossa Clínica Veterinária</h1>
 
+            <!-- Texto criado para apresentar os cuidados oferecidos
+                 pela clínica -->
             <p>
                 Cuidamos da saúde e do bem-estar dos animais com carinho,
                 atenção e profissionais preparados.
             </p>
 
+            <!-- Botão criado para direcionar o usuário
+                 à página que apresenta os serviços -->
             <a href="servicos.html" class="btn btn-primary">
                 Conheça nossos serviços
             </a>
@@ -71,21 +110,36 @@
         </section>
 
         <!-- Cards -->
+        <!-- Seção criada para destacar os principais serviços
+             apresentados na página inicial -->
         <section class="container my-5">
 
+            <!-- Linha criada pelo sistema de grid do Bootstrap
+                 para organizar os cards -->
             <div class="row g-4">
 
+                <!-- Primeiro card: Consultas -->
+                <!-- As classes definem o tamanho do card em diferentes telas -->
                 <div class="col-12 col-md-6 col-lg-4">
+
+                    <!-- Card criado para apresentar o serviço de consultas -->
                     <div class="card">
+
+                        <!-- Área interna criada para armazenar
+                             as informações do card -->
                         <div class="card-body">
 
+                            <!-- Nome do serviço apresentado no card -->
                             <h2 class="card-title">Consultas</h2>
 
+                            <!-- Descrição criada para explicar o serviço -->
                             <p class="card-text">
                                 Atendimento veterinário para acompanhar
                                 a saúde do seu animal.
                             </p>
 
+                            <!-- Botão criado para levar o usuário
+                                 à página de contato e agendamento -->
                             <a href="contato.html" class="btn btn-primary">
                                 Agendar
                             </a>
@@ -94,17 +148,24 @@
                     </div>
                 </div>
 
+                <!-- Segundo card: Vacinação -->
+                <!-- Card criado para destacar o serviço de vacinação -->
                 <div class="col-12 col-md-6 col-lg-4">
+
                     <div class="card">
+
                         <div class="card-body">
 
+                            <!-- Nome do serviço -->
                             <h2 class="card-title">Vacinação</h2>
 
+                            <!-- Descrição criada para explicar o serviço -->
                             <p class="card-text">
                                 Vacinas importantes para manter seu
                                 animal protegido contra doenças.
                             </p>
 
+                            <!-- Botão criado para acessar a página de contato -->
                             <a href="contato.html" class="btn btn-primary">
                                 Agendar
                             </a>
@@ -113,17 +174,26 @@
                     </div>
                 </div>
 
+                <!-- Terceiro card: Cuidados -->
+                <!-- Card criado para apresentar informações
+                     sobre cuidados com os animais -->
                 <div class="col-12 col-md-12 col-lg-4">
+
                     <div class="card">
+
                         <div class="card-body">
 
+                            <!-- Nome do serviço -->
                             <h2 class="card-title">Cuidados</h2>
 
+                            <!-- Descrição criada para explicar o serviço -->
                             <p class="card-text">
                                 Orientações e cuidados para melhorar
                                 a qualidade de vida dos animais.
                             </p>
 
+                            <!-- Botão criado para levar o usuário
+                                 à página completa de serviços -->
                             <a href="servicos.html" class="btn btn-primary">
                                 Saiba mais
                             </a>
@@ -137,48 +207,68 @@
         </section>
 
         <!-- Tabela -->
+        <!-- Seção criada para apresentar os horários de atendimento da clínica -->
         <section id="horarios" class="container my-5">
 
+            <!-- Título criado para identificar a tabela de horários -->
             <h2 class="text-center mb-4">
                 Horários de atendimento
             </h2>
 
+            <!-- Container criado para permitir rolagem horizontal
+                 da tabela em telas menores -->
             <div class="table-responsive">
 
+                <!-- Tabela criada para organizar os dias
+                     e horários de atendimento -->
                 <table class="table table-striped text-center">
 
+                    <!-- Cabeçalho da tabela -->
                     <thead>
                         <tr>
+
+                            <!-- Coluna criada para informar o dia da semana -->
                             <th>Dia</th>
+
+                            <!-- Coluna criada para informar o horário de atendimento -->
                             <th>Horário</th>
+
                         </tr>
                     </thead>
 
+                    <!-- Corpo da tabela -->
                     <tbody>
+
+                        <!-- Horário de segunda-feira -->
                         <tr>
                             <td>Segunda-feira</td>
                             <td>08:00 às 17:00</td>
                         </tr>
 
+                        <!-- Horário de terça-feira -->
                         <tr>
                             <td>Terça-feira</td>
                             <td>08:00 às 17:00</td>
                         </tr>
 
+                        <!-- Horário de quarta-feira -->
                         <tr>
                             <td>Quarta-feira</td>
                             <td>08:00 às 17:00</td>
                         </tr>
 
+                        <!-- Horário de quinta-feira -->
                         <tr>
                             <td>Quinta-feira</td>
                             <td>08:00 às 17:00</td>
                         </tr>
 
+                        <!-- Horário de sexta-feira -->
                         <tr>
                             <td>Sexta-feira</td>
                             <td>08:00 às 17:00</td>
                         </tr>
+
                     </tbody>
 
                 </table>
@@ -190,8 +280,10 @@
     </main>
 
     <!-- Rodapé -->
+    <!-- Área criada para apresentar informações finais do projeto -->
     <footer class="text-center py-4">
 
+        <!-- Identificação do projeto exibida no rodapé -->
         <p class="mb-0">
             Clínica Veterinária - Projeto TDS I
         </p>
@@ -199,6 +291,9 @@
     </footer>
 
     <!-- Bootstrap JavaScript -->
+    <!-- Importa o JavaScript do Bootstrap para permitir
+         o funcionamento de componentes interativos,
+         como o menu de navegação em telas menores -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
     </script>
 
