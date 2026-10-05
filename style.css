@@ -1,16 +1,41 @@
+```css
 /* =====================================================
    PALETA DE CORES
    ===================================================== */
+
+/* :root permite criar variáveis CSS que podem ser
+   reutilizadas em todo o arquivo. */
 :root {
+
+  /* Cor bege utilizada em áreas de destaque */
   --bege: #E8CCAD;
+
+  /* Cor laranja principal */
   --laranja: #EC802B;
+
+  /* Cor laranja mais escura, utilizada principalmente
+     nos botões */
   --laranja-escuro: #D96520;
+
+  /* Cor amarela utilizada em detalhes e efeitos */
   --amarelo: #EDC55B;
+
+  /* Cor turquesa principal do site */
   --turquesa: #66BCB4;
+
+  /* Versão mais escura da cor turquesa */
   --turquesa-escuro: #3F9690;
+
+  /* Cor marrom utilizada principalmente nos textos */
   --marrom: #795027;
+
+  /* Cor creme utilizada como fundo principal */
   --creme: #FFF8EF;
+
+  /* Cor branca utilizada em cartões, textos e outros elementos */
   --branco: #FFFFFF;
+
+  /* Cor cinza utilizada em textos secundários */
   --cinza: #6d6258;
 }
 
@@ -19,10 +44,21 @@
    CONFIGURAÇÕES GERAIS
    ===================================================== */
 
+/* Define as configurações gerais do corpo da página */
 body {
+
+  /* Define a cor de fundo de toda a página */
   background-color: var(--creme);
+
+  /* Define a cor padrão dos textos */
   color: var(--marrom);
+
+  /* Define a fonte utilizada no site.
+     Arial é a primeira opção; caso não esteja disponível,
+     Helvetica ou uma fonte sem serifa será utilizada. */
   font-family: Arial, Helvetica, sans-serif;
+
+  /* Remove a margem padrão adicionada pelo navegador */
   margin: 0;
 }
 
@@ -31,24 +67,47 @@ body {
    NAVBAR
    ===================================================== */
 
+/* Estiliza a barra de navegação */
 .navbar {
+
+  /* Define o fundo da barra como turquesa.
+     !important garante prioridade sobre regras do Bootstrap. */
   background-color: var(--turquesa) !important;
+
+  /* Adiciona uma sombra abaixo da barra de navegação */
   box-shadow: 0 3px 10px rgba(63, 150, 144, 0.25);
 }
 
+/* Estiliza o nome da clínica dentro da navbar */
 .navbar-brand {
+
+  /* Define a cor do nome como branca */
   color: var(--branco) !important;
+
+  /* Deixa o texto mais espesso */
   font-weight: 700;
+
+  /* Define o tamanho da fonte */
   font-size: 1.3rem;
 }
 
+/* Estiliza os links do menu */
 .nav-link {
+
+  /* Define a cor dos links como branca */
   color: var(--branco) !important;
+
+  /* Deixa os links mais destacados */
   font-weight: 600;
+
+  /* Define uma transição suave para alterações de estilo */
   transition: 0.3s;
 }
 
+/* Altera o link quando o mouse passa sobre ele */
 .nav-link:hover {
+
+  /* Muda a cor do link para amarelo */
   color: var(--amarelo) !important;
 }
 
@@ -57,11 +116,17 @@ body {
    BOTÃO DO MENU MOBILE
    ===================================================== */
 
+/* Estiliza o botão que abre o menu em telas pequenas */
 .navbar-toggler {
+
+  /* Define a cor da borda do botão */
   border-color: rgba(255, 255, 255, 0.7);
 }
 
+/* Estiliza o ícone do menu mobile */
 .navbar-toggler-icon {
+
+  /* Inverte as cores do ícone para deixá-lo branco */
   filter: brightness(0) invert(1);
 }
 
@@ -70,22 +135,45 @@ body {
    ÁREA DE APRESENTAÇÃO
    ===================================================== */
 
+/* Estiliza a seção principal de apresentação */
 main > section.container.text-center.my-5 {
+
+  /* Define o fundo da seção como bege */
   background-color: var(--bege);
+
+  /* Arredonda os cantos da seção */
   border-radius: 20px;
+
+  /* Adiciona espaço interno entre o conteúdo e as bordas */
   padding: 45px 25px;
+
+  /* Adiciona uma sombra ao redor da seção */
   box-shadow: 0 5px 15px rgba(121, 80, 39, 0.12);
 }
 
+/* Estiliza o título da área de apresentação */
 main > section.container.text-center.my-5 h1 {
+
+  /* Define a cor do título */
   color: var(--marrom);
+
+  /* Deixa o título mais espesso */
   font-weight: 800;
+
+  /* Adiciona espaço abaixo do título */
   margin-bottom: 15px;
 }
 
+/* Estiliza o parágrafo da área de apresentação */
 main > section.container.text-center.my-5 p {
+
+  /* Define a cor do texto */
   color: var(--marrom) !important;
+
+  /* Define o tamanho da fonte */
   font-size: 1.05rem;
+
+  /* Aumenta o espaçamento entre as linhas */
   line-height: 1.6;
 }
 
@@ -94,40 +182,82 @@ main > section.container.text-center.my-5 p {
    CARDS
    ===================================================== */
 
+/* Estiliza os cartões utilizados no site */
 .card {
+
+  /* Faz os cartões ocuparem toda a altura disponível */
   height: 100%;
+
+  /* Remove a borda padrão dos cartões */
   border: none;
+
+  /* Arredonda os cantos */
   border-radius: 18px;
+
+  /* Impede que o conteúdo ultrapasse os cantos arredondados */
   overflow: hidden;
+
+  /* Define o fundo branco */
   background-color: var(--branco);
+
+  /* Adiciona uma sombra ao cartão */
   box-shadow: 0 5px 15px rgba(121, 80, 39, 0.12);
 
+  /* Cria uma transição suave para movimento e sombra */
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
 }
 
+/* Define o efeito dos cartões quando o mouse passa sobre eles */
 .card:hover {
+
+  /* Move o cartão 7 pixels para cima */
   transform: translateY(-7px);
+
+  /* Aumenta a sombra para dar sensação de elevação */
   box-shadow: 0 10px 25px rgba(121, 80, 39, 0.20);
 }
 
+/* Estiliza a área interna dos cartões */
 .card-body {
+
+  /* Faz o conteúdo ocupar toda a altura do cartão */
   height: 100%;
+
+  /* Adiciona espaço interno */
   padding: 25px;
+
+  /* Adiciona uma faixa turquesa na parte superior */
   border-top: 7px solid var(--turquesa);
 }
 
+/* Estiliza o título dos cartões */
 .card-title {
+
+  /* Define a cor do título */
   color: var(--marrom);
+
+  /* Deixa o título em negrito */
   font-weight: 700;
+
+  /* Define o tamanho da fonte */
   font-size: 1.2rem;
+
+  /* Adiciona espaço abaixo do título */
   margin-bottom: 12px;
 }
 
+/* Estiliza o texto dos cartões */
 .card-text {
+
+  /* Define a cor do texto */
   color: var(--cinza);
+
+  /* Define o espaçamento entre as linhas */
   line-height: 1.6;
+
+  /* Adiciona espaço abaixo do texto */
   margin-bottom: 20px;
 }
 
@@ -136,30 +266,57 @@ main > section.container.text-center.my-5 p {
    BOTÕES
    ===================================================== */
 
+/* Estiliza os botões que utilizam a classe btn-primary */
 .btn-primary {
+
+  /* Define a cor de fundo do botão */
   background-color: var(--laranja-escuro);
+
+  /* Define a cor da borda */
   border-color: var(--laranja-escuro);
+
+  /* Define a cor do texto */
   color: var(--branco);
 
+  /* Deixa o texto do botão em negrito */
   font-weight: 700;
+
+  /* Arredonda bastante os cantos do botão */
   border-radius: 25px;
+
+  /* Define o espaço interno do botão */
   padding: 9px 22px;
 
+  /* Cria uma transição suave para as alterações do botão */
   transition:
     background-color 0.3s ease,
     border-color 0.3s ease,
     transform 0.3s ease;
 }
 
+/* Define o comportamento do botão quando o mouse passa sobre ele */
 .btn-primary:hover {
+
+  /* Clareia a cor do fundo */
   background-color: var(--laranja);
+
+  /* Clareia também a cor da borda */
   border-color: var(--laranja);
+
+  /* Mantém o texto branco */
   color: var(--branco);
+
+  /* Aumenta levemente o tamanho do botão */
   transform: scale(1.04);
 }
 
+/* Define o estilo do botão enquanto ele está sendo pressionado */
 .btn-primary:active {
+
+  /* Retorna o botão para o laranja escuro */
   background-color: var(--laranja-escuro) !important;
+
+  /* Mantém a borda laranja escura */
   border-color: var(--laranja-escuro) !important;
 }
 
@@ -168,8 +325,13 @@ main > section.container.text-center.my-5 p {
    SEÇÃO DE HORÁRIOS
    ===================================================== */
 
+/* Estiliza o título da seção de horários */
 #horarios h2 {
+
+  /* Define a cor do título */
   color: var(--marrom);
+
+  /* Deixa o título mais espesso */
   font-weight: 800;
 }
 
@@ -178,41 +340,82 @@ main > section.container.text-center.my-5 p {
    TABELA
    ===================================================== */
 
+/* Estiliza a tabela de horários */
 .table {
+
+  /* Define o fundo branco */
   background-color: var(--branco);
+
+  /* Arredonda os cantos da tabela */
   border-radius: 12px;
+
+  /* Impede que o conteúdo ultrapasse os cantos */
   overflow: hidden;
+
+  /* Adiciona uma sombra */
   box-shadow: 0 5px 15px rgba(121, 80, 39, 0.10);
+
+  /* Remove a margem inferior padrão */
   margin-bottom: 0;
 }
 
+/* Estiliza o cabeçalho da tabela */
 .table thead {
+
+  /* Define o fundo do cabeçalho como turquesa */
   background-color: var(--turquesa);
+
+  /* Define a cor do texto como branca */
   color: var(--branco);
 }
 
+/* Estiliza as células do cabeçalho */
 .table thead th {
+
+  /* Remove as bordas das células */
   border: none;
+
+  /* Adiciona espaço interno */
   padding: 15px;
+
+  /* Mantém o fundo turquesa */
   background-color: var(--turquesa);
+
+  /* Mantém o texto branco */
   color: var(--branco);
 }
 
+/* Estiliza as células do corpo da tabela */
 .table tbody td {
+
+  /* Define a cor do texto */
   color: var(--marrom);
+
+  /* Adiciona espaço interno */
   padding: 13px;
+
+  /* Centraliza verticalmente o conteúdo */
   vertical-align: middle;
 }
 
+/* Define a cor das linhas ímpares da tabela */
 .table-striped > tbody > tr:nth-of-type(odd) > * {
+
+  /* Usa o creme como fundo */
   background-color: var(--creme);
 }
 
+/* Define a cor das linhas pares da tabela */
 .table-striped > tbody > tr:nth-of-type(even) > * {
+
+  /* Usa branco como fundo */
   background-color: var(--branco);
 }
 
+/* Altera o fundo da linha quando o mouse passa sobre ela */
 .table tbody tr:hover td {
+
+  /* Destaca a linha com a cor bege */
   background-color: var(--bege);
 }
 
@@ -221,58 +424,114 @@ main > section.container.text-center.my-5 p {
    FORMULÁRIO DE CONTATO
    ===================================================== */
 
+/* Estiliza o formulário da página de contato */
 form {
+
+  /* Define o fundo branco */
   background-color: var(--branco);
+
+  /* Arredonda os cantos */
   border-radius: 18px;
+
+  /* Adiciona espaço interno */
   padding: 30px;
+
+  /* Adiciona uma sombra */
   box-shadow: 0 5px 15px rgba(121, 80, 39, 0.12);
 }
 
+/* Estiliza os textos dos campos do formulário */
 .form-label {
+
+  /* Define a cor do texto */
   color: var(--marrom);
+
+  /* Deixa os textos mais destacados */
   font-weight: 600;
 }
 
+/* Estiliza os campos de texto e as caixas de seleção */
 .form-control,
 .form-select {
+
+  /* Define uma borda clara */
   border: 1px solid #d8c8b8;
+
+  /* Arredonda os cantos */
   border-radius: 10px;
+
+  /* Adiciona espaço interno */
   padding: 10px 12px;
+
+  /* Define a cor do texto digitado */
   color: var(--marrom);
 }
 
+/* Estiliza o texto de exemplo dentro dos campos */
 .form-control::placeholder {
+
+  /* Define uma cor mais clara para o placeholder */
   color: #9b9086;
 }
 
+/* Define o estilo dos campos quando estão selecionados */
 .form-control:focus,
 .form-select:focus {
+
+  /* Altera a cor da borda para turquesa */
   border-color: var(--turquesa);
+
+  /* Adiciona um brilho ao redor do campo selecionado */
   box-shadow: 0 0 0 0.2rem rgba(102, 188, 180, 0.20);
 }
 
+/* Define a cor da borda dos botões de seleção */
 .form-check-input {
+
+  /* Utiliza uma cor clara na borda */
   border-color: #cbb9a7;
 }
 
+/* Define a aparência dos botões de seleção quando marcados */
 .form-check-input:checked {
+
+  /* Define o fundo como turquesa */
   background-color: var(--turquesa);
+
+  /* Define a borda como turquesa */
   border-color: var(--turquesa);
 }
 
+/* Estiliza os textos associados aos checkboxes e radio buttons */
 .form-check-label {
+
+  /* Define a cor do texto */
   color: var(--marrom);
 }
 
+/* Remove a borda padrão dos fieldsets */
 fieldset {
+
+  /* Remove a borda */
   border: none;
+
+  /* Remove o espaçamento interno padrão */
   padding: 0;
 }
 
+/* Estiliza os títulos dos fieldsets */
 fieldset legend {
+
+  /* Define a cor do título */
   color: var(--marrom);
+
+  /* Define o tamanho da fonte */
   font-size: 1rem;
+
+  /* Deixa o título mais espesso */
   font-weight: 600;
+
+  /* Adiciona espaço abaixo do título */
   margin-bottom: 10px;
 }
 
@@ -281,13 +540,23 @@ fieldset legend {
    RODAPÉ
    ===================================================== */
 
+/* Estiliza o rodapé */
 footer {
+
+  /* Define o fundo do rodapé como turquesa */
   background-color: var(--turquesa) !important;
+
+  /* Define o texto como branco */
   color: var(--branco);
+
+  /* Adiciona espaço entre o conteúdo anterior e o rodapé */
   margin-top: 40px;
 }
 
+/* Estiliza o texto dentro do rodapé */
 footer p {
+
+  /* Deixa o texto mais espesso */
   font-weight: 600;
 }
 
@@ -296,32 +565,41 @@ footer p {
    RESPONSIVIDADE
    ===================================================== */
 
+/* Aplica estas regras quando a tela tiver até 768 pixels de largura.
+   É utilizado para adaptar o site a celulares e tablets. */
 @media (max-width: 768px) {
 
+  /* Diminui o tamanho do nome da clínica na navbar */
   .navbar-brand {
     font-size: 1.05rem;
   }
 
+  /* Reduz o espaçamento interno da área de apresentação */
   main > section.container.text-center.my-5 {
     padding: 30px 18px;
   }
 
+  /* Diminui o tamanho do título principal */
   main > section.container.text-center.my-5 h1 {
     font-size: 1.8rem;
   }
 
+  /* Reduz o espaçamento interno dos cartões */
   .card-body {
     padding: 20px;
   }
 
+  /* Faz os botões ocuparem toda a largura disponível */
   .btn-primary {
     width: 100%;
   }
 
+  /* Reduz o espaçamento interno do formulário */
   form {
     padding: 20px;
   }
 
+  /* Diminui um pouco o tamanho da fonte da tabela */
   .table {
     font-size: 0.9rem;
   }
@@ -332,21 +610,28 @@ footer p {
    TELAS MUITO PEQUENAS
    ===================================================== */
 
+/* Aplica estas regras em telas com até 400 pixels de largura,
+   como celulares menores. */
 @media (max-width: 400px) {
 
+  /* Reduz ainda mais o tamanho do título */
   main > section.container.text-center.my-5 h1 {
     font-size: 1.5rem;
   }
 
+  /* Reduz o tamanho do texto de apresentação */
   main > section.container.text-center.my-5 p {
     font-size: 0.95rem;
   }
 
+  /* Diminui o tamanho dos títulos dos cartões */
   .card-title {
     font-size: 1.1rem;
   }
 
+  /* Reduz o espaçamento interno do formulário */
   form {
     padding: 15px;
   }
 }
+```
