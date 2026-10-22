@@ -1,105 +1,120 @@
-// Os preços são ilustrativos e servem para demonstrar o funcionamento.
+// Define preços ilustrativos para demonstrar o funcionamento do sistema.
 
-// Localiza o formulário de agendamento pelo seu ID.
+// Localiza o formulário de agendamento no documento HTML.
 const formulario = document.getElementById("formAgendamento");
 
-// Só executa a lógica se o formulário existir nesta página.
+// Verifica se o formulário existe antes de executar o código.
+// Isso evita erros em páginas que não possuem esse formulário.
 if (formulario) {
-    // Localiza o seletor do serviço principal.
+    // Obtém o campo de seleção do serviço principal.
     const seletorServico = document.getElementById("servico");
 
-    // Localiza todos os adicionais que podem ser selecionados.
+    // Obtém todos os campos de seleção dos serviços adicionais.
     const adicionais = document.querySelectorAll(".adicional");
 
-    // Localiza os elementos que mostram os preços na página.
+    // Obtém os elementos HTML que exibem os valores calculados.
     const textoServico = document.getElementById("servicoSelecionado");
     const textoAdicionais = document.getElementById("totalAdicionais");
     const textoTotal = document.getElementById("totalGeral");
 
-    // Converte números para o formato monetário brasileiro.
+    // Cria uma função para formatar números como valores monetários.
+    // toLocaleString utiliza as convenções de formatação do Brasil.
+    // BRL representa o real brasileiro.
     const formatarMoeda = (valor) =>
         valor.toLocaleString("pt-BR", {
             style: "currency",
             currency: "BRL"
         });
 
-    // Calcula o preço do serviço, os adicionais e o total.
+    // Calcula e atualiza os preços do serviço principal e dos adicionais.
     function calcularTotal() {
-        // Obtém a opção selecionada no menu de serviços.
+        // Obtém a opção atualmente selecionada no menu.
         const opcao = seletorServico.options[seletorServico.selectedIndex];
 
-        // Lê o preço armazenado no atributo data-price.
+        // Lê o preço definido no atributo data-price da opção.
+        // Number converte o valor para número.
+        // Se não houver preço, utiliza zero.
         const precoServico = Number(opcao.dataset.price || 0);
 
-        // Inicializa a soma dos adicionais.
+        // Inicializa a variável que acumula os preços dos adicionais.
         let totalAdicionais = 0;
 
-        // Guarda os nomes e os preços dos adicionais selecionados.
+        // Cria uma lista para armazenar os nomes e preços dos adicionais.
         const itensAdicionais = [];
 
-        // Percorre todos os adicionais disponíveis.
+        // Percorre todos os campos de serviços adicionais.
         adicionais.forEach((item) => {
-            // Considera apenas os itens marcados.
+            // Verifica se o adicional está marcado.
             if (item.checked) {
                 // Obtém o preço do adicional selecionado.
                 const preco = Number(item.dataset.price || 0);
 
-                // Soma o preço ao total dos adicionais.
+                // Adiciona o preço ao total dos serviços adicionais.
                 totalAdicionais += preco;
 
-                // Registra o nome e o preço do item.
+                // Armazena o nome e o preço formatado do adicional.
                 itensAdicionais.push(
                     `${item.value} (${formatarMoeda(preco)})`
                 );
             }
         });
 
-        // Atualiza a descrição do serviço escolhido.
+        // Verifica se o usuário selecionou um serviço principal.
         if (seletorServico.value) {
+            // Exibe o nome do serviço e seu preço formatado.
+            // trim() remove espaços em branco no início e no fim do texto.
             textoServico.textContent =
                 `${opcao.textContent.trim()} — ${formatarMoeda(precoServico)}`;
         } else {
-            // Orienta o usuário caso nenhum serviço tenha sido escolhido.
+            // Exibe uma orientação quando nenhum serviço foi selecionado.
             textoServico.textContent =
                 "Selecione um serviço para ver o preço.";
         }
 
-        // Exibe a soma dos adicionais.
+        // Exibe o valor total dos serviços adicionais selecionados.
         textoAdicionais.textContent = formatarMoeda(totalAdicionais);
 
-        // Exibe o total do serviço principal mais os adicionais.
+        // Soma o preço do serviço principal aos preços dos adicionais.
+        // Em seguida, exibe o resultado em formato monetário.
         textoTotal.textContent =
             formatarMoeda(precoServico + totalAdicionais);
     }
 
-    // Recalcula os preços quando o serviço principal muda.
+    // Adiciona um evento ao seletor do serviço principal.
+    // Quando a seleção muda, os preços são recalculados.
     seletorServico.addEventListener("change", calcularTotal);
 
-    // Recalcula os preços sempre que um adicional é marcado ou desmarcado.
+    // Adiciona um evento a cada serviço adicional.
+    // Marcar ou desmarcar uma opção atualiza os valores exibidos.
     adicionais.forEach((item) =>
         item.addEventListener("change", calcularTotal)
     );
 
-    // Intercepta o envio do formulário.
+    // Detecta quando o usuário tenta enviar o formulário.
     formulario.addEventListener("submit", function (evento) {
-        // Impede o recarregamento da página.
+        // Impede o comportamento padrão de envio do formulário,
+        // evitando que a página seja recarregada.
         evento.preventDefault();
 
-        // Verifica se os campos obrigatórios são válidos.
+        // Verifica se todos os campos obrigatórios são válidos.
         if (!formulario.checkValidity()) {
-            // Mostra as mensagens de validação do navegador.
+            // Solicita ao navegador que apresente as mensagens de validação.
             formulario.reportValidity();
+
+            // Interrompe a execução se houver campos inválidos.
             return;
         }
 
-        // Obtém o serviço selecionado.
+        // Obtém a opção do serviço principal selecionado.
         const opcao =
             seletorServico.options[seletorServico.selectedIndex];
 
-        // Lê o preço do serviço.
+        // Obtém o preço do serviço principal.
         const precoServico = Number(opcao.dataset.price || 0);
 
-        // Soma os preços de todos os adicionais marcados.
+        // Converte os campos de adicionais em um array.
+        // filter() mantém somente os adicionais marcados.
+        // reduce() soma os preços desses adicionais.
         const totalAdicionais = Array.from(adicionais)
             .filter((item) => item.checked)
             .reduce(
@@ -108,24 +123,40 @@ if (formulario) {
                 0
             );
 
-        // Calcula o valor final.
+        // Calcula o valor final somando o serviço principal
+        // ao total dos serviços adicionais selecionados.
         const total = precoServico + totalAdicionais;
 
-        // Monta a mensagem de confirmação com os dados informados.
+        // Cria uma lista de mensagens com os dados da solicitação.
         const confirmacao = [
+            // Informa que a solicitação foi preparada.
             "Solicitação preparada!",
+
+            // Obtém e apresenta o nome do responsável.
             `Responsável: ${document.getElementById("nome").value}`,
+
+            // Obtém e apresenta o nome do animal.
             `Animal: ${document.getElementById("animal").value}`,
+
+            // Apresenta o serviço principal selecionado.
             `Serviço: ${opcao.textContent.trim()}`,
+
+            // Apresenta o preço total estimado.
             `Total estimado: ${formatarMoeda(total)}`,
+
+            // Adiciona uma linha em branco para separar as informações.
             "",
+
+            // Esclarece que a demonstração não envia os dados a uma clínica.
             "Este site é uma demonstração: a solicitação não foi enviada a uma clínica."
         ].join("\n");
 
-        // Exibe a confirmação em uma janela do navegador.
+        // Exibe a mensagem de confirmação em uma janela do navegador.
         alert(confirmacao);
     });
 
-    // Calcula os valores iniciais assim que o script é executado.
+    // Executa o cálculo inicial assim que o código é carregado.
+    // Isso permite apresentar os valores iniciais sem esperar uma interação.
     calcularTotal();
 }
+```
