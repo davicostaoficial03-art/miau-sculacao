@@ -1,4 +1,6 @@
-/* Define as variáveis de cores usadas no site */
+```css
+/* Define variáveis globais de cores para manter a identidade visual do site.
+   As variáveis podem ser reutilizadas em diferentes seletores com var(). */
 :root {
     --bege: #E8CCAD;
     --laranja: #EC802B;
@@ -12,7 +14,12 @@
     --cinza: #6d6258;
 }
 
-/* Configura a aparência geral da página */
+/* Configura a aparência geral de todas as páginas.
+   background-color define o fundo.
+   color define a cor padrão do texto.
+   font-family estabelece a família tipográfica, usando alternativas
+   caso a fonte anterior não esteja disponível.
+   margin: 0 remove a margem externa padrão do navegador. */
 body {
     background-color: var(--creme);
     color: var(--marrom);
@@ -20,32 +27,47 @@ body {
     margin: 0;
 }
 
-/* Personaliza a barra de navegação */
+/* Personaliza a barra de navegação.
+   background-color aplica a cor turquesa definida nas variáveis.
+   !important prioriza essa declaração sobre regras conflitantes.
+   box-shadow cria uma sombra para destacar a barra do restante da página.
+   rgba define a cor da sombra com transparência. */
 .navbar {
     background-color: var(--turquesa) !important;
     box-shadow: 0 3px 10px rgba(63, 150, 144, 0.25);
 }
 
-/* Estiliza o nome da clínica */
+/* Estiliza o nome da clínica exibido na barra de navegação.
+   color define a cor branca.
+   font-weight: 700 aplica negrito.
+   font-size aumenta o tamanho do texto. */
 .navbar-brand {
     color: var(--branco) !important;
     font-weight: 700;
     font-size: 1.3rem;
 }
 
-/* Estiliza os links do menu */
+/* Define a aparência dos links do menu.
+   color deixa os links brancos.
+   font-weight destaca os textos.
+   transition suaviza as mudanças de cor ao longo de 0,3 segundo. */
 .nav-link {
     color: var(--branco) !important;
     font-weight: 600;
     transition: color 0.3s;
 }
 
-/* Muda a cor dos links quando o mouse passa sobre eles */
+/* Altera a cor dos links quando o cursor do mouse passa sobre eles.
+   O amarelo cria um destaque visual para indicar a interação. */
 .nav-link:hover {
     color: var(--amarelo) !important;
 }
 
-/* Personaliza os cartões de conteúdo */
+/* Personaliza os cartões utilizados para apresentar conteúdos e serviços.
+   background-color define o fundo branco.
+   border: none remove a borda padrão.
+   border-radius arredonda os cantos.
+   box-shadow adiciona uma sombra discreta ao redor dos cartões. */
 .card {
     background-color: var(--branco);
     border: none;
@@ -53,17 +75,22 @@ body {
     box-shadow: 0 4px 12px rgba(121, 80, 39, 0.12);
 }
 
-/* Define a aparência dos botões principais */
+/* Define a aparência padrão dos botões da classe btn-primary.
+   background-color altera o fundo para laranja escuro.
+   border-color aplica a mesma cor à borda. */
 .btn-primary {
     background-color: var(--laranja-escuro);
     border-color: var(--laranja-escuro);
 }
 
-/* Altera a cor do botão ao passar o mouse */
+/* Altera o fundo e a borda dos botões principais ao passar o mouse.
+   O laranja mais claro fornece um efeito visual de interação. */
 .btn-primary:hover {
     background-color: var(--laranja);
     border-color: var(--laranja);
 }
 
-/* Ajustes adicionais para telas pequenas podem ser
-   definidos com media queries (@media). */
+/* Permite adicionar ajustes específicos para telas pequenas.
+   Media queries aplicam estilos somente quando as condições definidas
+   são atendidas, como uma largura máxima de tela. */
+```
